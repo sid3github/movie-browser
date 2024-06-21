@@ -7,6 +7,8 @@ import Filters from './components/Filters';
 import useDebounce from './hooks/useDebounce';
 import './App.css';
 
+const REACT_APP_TMDB_API_KEY = '91e0d2eedb41c669c782db8b1f3461d0';
+
 const App = () => {
   const currentYear = new Date().getFullYear();
 
@@ -30,7 +32,7 @@ const App = () => {
 
       try {
         const params = {
-          api_key: process.env.REACT_APP_TMDB_API_KEY,
+          api_key: REACT_APP_TMDB_API_KEY,
           page: reset ? 1 : page,
           with_genres: filters.genre,
           'primary_release_date.gte': `${filters.yearRange[0]}-01-01`,
