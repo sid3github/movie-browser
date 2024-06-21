@@ -30,7 +30,7 @@ const App = () => {
 
       try {
         const params = {
-          api_key: '91e0d2eedb41c669c782db8b1f3461d0',
+          api_key: process.env.REACT_APP_TMDB_API_KEY,
           page: reset ? 1 : page,
           with_genres: filters.genre,
           'primary_release_date.gte': `${filters.yearRange[0]}-01-01`,
